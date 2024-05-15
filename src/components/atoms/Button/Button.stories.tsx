@@ -1,71 +1,108 @@
-import React, { useState } from "react";
-
 import type { Meta, StoryObj } from "@storybook/react";
-import ArrowRightIcon from "@tremor/react/dist/assets/ArrowRightIcon";
 import { Button } from "./Button";
+
+import { button } from "@nextui-org/theme";
+import {
+  Camera,
+  HeadphonesIcon,
+  Notification,
+  ArrowRightIcon,
+} from "@nextui-org/shared-icons";
 import { Grid } from "@/components/atoms/Grid";
-import { BaseColors, Sizes as InputSizes } from "@tremor/react/dist/lib/constants";
 
 const meta: Meta<typeof Button> = {
   title: "UI/Input/Button",
   component: Button,
-  parameters: {
-    sourceLink:
-      "https://github.com/tremorlabs/tremor/tree/main/src/components/input-elements/Button",
+  argTypes: {
+    variant: {
+      control: {
+        type: "select",
+      },
+      options: [
+        "solid",
+        "bordered",
+        "light",
+        "flat",
+        "faded",
+        "shadow",
+        "ghost",
+      ],
+    },
+    color: {
+      control: {
+        type: "select",
+      },
+      options: [
+        "default",
+        "primary",
+        "secondary",
+        "success",
+        "warning",
+        "danger",
+      ],
+    },
+    size: {
+      control: {
+        type: "select",
+      },
+      options: ["sm", "md", "lg"],
+    },
+    spinnerPlacement: {
+      control: {
+        type: "select",
+      },
+      options: ["start", "end"],
+    },
+    fullWidth: {
+      control: {
+        type: "boolean",
+      },
+    },
+    radius: {
+      control: {
+        type: "select",
+      },
+      options: ["none", "sm", "md", "lg", "full"],
+    },
+    isDisabled: {
+      control: {
+        type: "boolean",
+      },
+    },
+    isLoading: {
+      control: {
+        type: "boolean",
+      },
+    },
+    disableAnimation: {
+      control: {
+        type: "boolean",
+      },
+    },
   },
 };
 
 export default meta;
+
 type Story = StoryObj<typeof Button>;
+
+const defaultProps = {
+  children: "Button",
+  spinnerPlacement: "start",
+  ...button.defaultVariants,
+};
 
 const SizesTemplate: Story = {
   render: ({ ...args }) => {
     return (
-      <Grid numItems={5} className="gap-4">
-        <Button {...args}>Button</Button>
-        <Button {...args} icon={ArrowRightIcon}>
-          Button
-        </Button>
-        <Button {...args} icon={ArrowRightIcon} iconPosition="right">
-          Button
-        </Button>
-        <Button {...args} variant="secondary" icon={ArrowRightIcon} iconPosition="left">
-          Button
-        </Button>
-        <Button {...args} variant="light" icon={ArrowRightIcon} iconPosition="right">
-          Button
-        </Button>
-        {Object.values(InputSizes).map((size) => (
-          <>
-            <Button {...args} size={size}>
+      <Grid>
+        {meta.argTypes?.size?.options?.map(
+          (size: "sm" | "md" | "lg", index: number) => (
+            <Button key={index} {...args} size={size}>
               Button
             </Button>
-            <Button {...args} size={size} icon={ArrowRightIcon}>
-              Button
-            </Button>
-            <Button {...args} size={size} icon={ArrowRightIcon} iconPosition="right">
-              Button
-            </Button>
-            <Button
-              {...args}
-              size={size}
-              variant="secondary"
-              icon={ArrowRightIcon}
-              iconPosition="left"
-            >
-              Button
-            </Button>
-            <Button
-              {...args}
-              size={size}
-              variant="light"
-              icon={ArrowRightIcon}
-              iconPosition="right"
-            >
-              Button
-            </Button>
-          </>
-        ))}
+          )
+        )}
       </Grid>
     );
   },
@@ -74,20 +111,12 @@ const SizesTemplate: Story = {
 const SizesTemplateNoText: Story = {
   render: ({ ...args }) => {
     return (
-      <Grid numItems={5} className="gap-4">
-        <Button {...args} icon={ArrowRightIcon}></Button>
-        <Button {...args} icon={ArrowRightIcon}></Button>
-        <Button {...args} variant="secondary" icon={ArrowRightIcon}></Button>
-        <Button {...args} variant="light" icon={ArrowRightIcon}></Button>
-        {Object.values(InputSizes).map((size) => (
-          <>
-            <Button {...args} size={size}></Button>
-            <Button {...args} size={size} icon={ArrowRightIcon}></Button>
-            <Button {...args} size={size} icon={ArrowRightIcon}></Button>
-            <Button {...args} size={size} variant="secondary" icon={ArrowRightIcon}></Button>
-            <Button {...args} size={size} variant="light" icon={ArrowRightIcon}></Button>
-          </>
-        ))}
+      <Grid>
+        {meta.argTypes?.size?.options?.map(
+          (size: "sm" | "md" | "lg", index: number) => (
+            <Button key={index} {...args} size={size} />
+          )
+        )}
       </Grid>
     );
   },
@@ -96,74 +125,35 @@ const SizesTemplateNoText: Story = {
 const ColorsTemplate: Story = {
   render: ({ ...args }) => {
     return (
-      <Grid numItems={4} numItemsLg={4} className="gap-y-2">
-        {Object.values(BaseColors).map((color) => (
-          <>
-            <Button {...args} color={color}>
-              Button
-            </Button>
-            <Button {...args} color={color} icon={ArrowRightIcon}>
-              Button
-            </Button>
-            <Button {...args} color={color} variant="secondary">
-              Button
-            </Button>
-            <Button {...args} color={color} variant="light">
-              Button
-            </Button>
-          </>
-        ))}
+      <Grid>
+        {meta.argTypes?.color?.options?.map(
+          (
+            color:
+              | "default"
+              | "primary"
+              | "secondary"
+              | "success"
+              | "warning"
+              | "danger"
+          ) => (
+            <>
+              <Button {...args} color={color}>
+                Button
+              </Button>
+              <Button {...args} color={color} endContent={<ArrowRightIcon />}>
+                Button
+              </Button>
+              <Button {...args} color={color} variant="solid">
+                Button
+              </Button>
+              <Button {...args} color={color} variant="light">
+                Button
+              </Button>
+            </>
+          )
+        )}
       </Grid>
     );
-  },
-};
-
-function LoadingState({ ...args }) {
-  const [loading, setLoading] = useState(false);
-  function RenderButtons(args: any, loading: any) {
-    return (
-      <>
-        <Button {...args} loading={loading}>
-          Button
-        </Button>
-        <Button {...args} icon={ArrowRightIcon} loading={loading}>
-          Button
-        </Button>
-        <Button {...args} icon={ArrowRightIcon} iconPosition="right" loading={loading}>
-          Button
-        </Button>
-        <Button {...args} variant="secondary" loading={loading}>
-          Button
-        </Button>
-      </>
-    );
-  }
-
-  return (
-    <>
-      <Button onClick={() => setLoading(!loading)} color="gray">
-        Click to Load
-      </Button>
-      <div className="flex flex-col max-w-fit gap-y-2 mt-10">
-        {Object.values(InputSizes).map((size, index) => (
-          <React.Fragment key={index}>{RenderButtons(args, loading)}</React.Fragment>
-        ))}
-      </div>
-      With Loading Text
-      <div className="flex flex-col max-w-fit gap-y-2 mt-10">
-        {RenderButtons({ ...args, loadingText: "Loading" }, loading)}
-      </div>
-    </>
-  );
-}
-
-const LoadingStateTemplate: Story = {
-  render: ({ ...args }) => <LoadingState {...args} />,
-};
-
-export const Default: Story = {
-  args: {
-    children: "Default",
   },
 };
 
@@ -191,22 +181,49 @@ export const Colors: Story = {
   },
 };
 
-export const Disabled: Story = {
+export const IsDisabled = {
   args: {
-    children: "Disabled",
-    disabled: true,
+    ...defaultProps,
+    isDisabled: true,
   },
 };
 
-export const TooltipDisabled: Story = {
+export const DisableRipple = {
   args: {
-    children: "Disabled",
-    tooltip: "Disabled",
-    disabled: true,
+    ...defaultProps,
+    disableRipple: true,
   },
 };
 
-export const LoadingStates: Story = {
-  ...LoadingStateTemplate,
-  args: {},
+export const WithIcons = {
+  args: {
+    ...defaultProps,
+    startContent: <Notification className="fill-current" />,
+    endContent: <Camera className="fill-current" />,
+  },
+};
+
+export const IconButton = {
+  args: {
+    ...defaultProps,
+    isIconOnly: true,
+    children: <HeadphonesIcon className="w-5 h-5" />,
+  },
+};
+
+export const IsLoading = {
+  args: {
+    ...defaultProps,
+    color: "primary",
+    isLoading: true,
+  },
+};
+
+export const CustomWithClassNames = {
+  args: {
+    ...defaultProps,
+    radius: "full",
+    className:
+      "bg-gradient-to-tr from-pink-500 to-yellow-500 text-white shadow-lg",
+  },
 };

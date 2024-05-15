@@ -1,1 +1,1 @@
-export { Button } from '@tremor/react';
+export { Button } from "@nextui-org/button";
