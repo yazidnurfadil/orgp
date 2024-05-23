@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.4.0",
+    "@nextui-org/stories-utils": "^2.0.2",
     "@storybook/addon-essentials": "^8.1.1",
     "@storybook/addon-interactions": "^8.1.1",
     "@storybook/addon-links": "^8.1.1",
