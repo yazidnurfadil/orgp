@@ -1,45 +1,25 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { Button } from "./Button";
+import React from "react";
+import {Meta} from "@storybook/react";
+import {button} from "@nextui-org/theme";
+import {Camera, HeadphonesIcon, Notification} from "@nextui-org/shared-icons";
 
-import { button } from "@nextui-org/theme";
-import {
-  Camera,
-  HeadphonesIcon,
-  Notification,
-  ArrowRightIcon,
-} from "@nextui-org/shared-icons";
-import { Grid } from "@/components/atoms/Grid";
+import { Button, ButtonProps } from "./Button";
 
-const meta: Meta<typeof Button> = {
-  title: "UI/Input/Button",
+export default {
+  title: "Components/Button",
   component: Button,
   argTypes: {
     variant: {
       control: {
         type: "select",
       },
-      options: [
-        "solid",
-        "bordered",
-        "light",
-        "flat",
-        "faded",
-        "shadow",
-        "ghost",
-      ],
+      options: ["solid", "bordered", "light", "flat", "faded", "shadow", "ghost"],
     },
     color: {
       control: {
         type: "select",
       },
-      options: [
-        "default",
-        "primary",
-        "secondary",
-        "success",
-        "warning",
-        "danger",
-      ],
+      options: ["default", "primary", "secondary", "success", "warning", "danger"],
     },
     size: {
       control: {
@@ -80,11 +60,7 @@ const meta: Meta<typeof Button> = {
       },
     },
   },
-};
-
-export default meta;
-
-type Story = StoryObj<typeof Button>;
+} as Meta<typeof Button>;
 
 const defaultProps = {
   children: "Button",
@@ -92,92 +68,33 @@ const defaultProps = {
   ...button.defaultVariants,
 };
 
-const SizesTemplate: Story = {
-  render: ({ ...args }) => {
-    return (
-      <Grid>
-        {meta.argTypes?.size?.options?.map(
-          (size: "sm" | "md" | "lg", index: number) => (
-            <Button key={index} {...args} size={size}>
-              Button
-            </Button>
-          )
-        )}
-      </Grid>
-    );
-  },
+const StateTemplate = (args: ButtonProps) => {
+  const [isOpen, setIsOpen] = React.useState(false);
+
+  const handlePress = () => {
+    // eslint-disable-next-line no-console
+    console.log("Pressed");
+    setIsOpen((prev) => !prev);
+  };
+
+  return (
+    <Button {...args} aria-label="Open" aria-pressed={isOpen} onPress={handlePress}>
+      {isOpen ? "Close" : "Open"}
+    </Button>
+  );
 };
 
-const SizesTemplateNoText: Story = {
-  render: ({ ...args }) => {
-    return (
-      <Grid>
-        {meta.argTypes?.size?.options?.map(
-          (size: "sm" | "md" | "lg", index: number) => (
-            <Button key={index} {...args} size={size} />
-          )
-        )}
-      </Grid>
-    );
-  },
-};
-
-const ColorsTemplate: Story = {
-  render: ({ ...args }) => {
-    return (
-      <Grid>
-        {meta.argTypes?.color?.options?.map(
-          (
-            color:
-              | "default"
-              | "primary"
-              | "secondary"
-              | "success"
-              | "warning"
-              | "danger"
-          ) => (
-            <>
-              <Button {...args} color={color}>
-                Button
-              </Button>
-              <Button {...args} color={color} endContent={<ArrowRightIcon />}>
-                Button
-              </Button>
-              <Button {...args} color={color} variant="solid">
-                Button
-              </Button>
-              <Button {...args} color={color} variant="light">
-                Button
-              </Button>
-            </>
-          )
-        )}
-      </Grid>
-    );
-  },
-};
-
-export const Sizes: Story = {
-  ...SizesTemplate,
+export const Default = {
   args: {
-    onClick: () => alert(2),
-    className: "max-w-fit",
+    ...defaultProps,
   },
 };
 
-export const SizesNoText: Story = {
-  ...SizesTemplateNoText,
-  args: {
-    onClick: () => alert(2),
-    className: "max-w-fit",
-  },
-};
+export const WithState = {
+  render: StateTemplate,
 
-export const Colors: Story = {
-  ...ColorsTemplate,
   args: {
-    onClick: () => alert(2),
-    className: "max-w-fit",
+    ...defaultProps,
   },
 };
 
@@ -223,7 +140,6 @@ export const CustomWithClassNames = {
   args: {
     ...defaultProps,
     radius: "full",
-    className:
-      "bg-gradient-to-tr from-pink-500 to-yellow-500 text-white shadow-lg",
+    className: "bg-gradient-to-tr from-pink-500 to-yellow-500 text-white shadow-lg",
   },
 };
