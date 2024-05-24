@@ -16,6 +16,6 @@ export const Accordion = NextUiAccordion;
 export const useAccordionItem = nextUiUseAccordionItem;
 export const useAccordion = nextUiUseAccordion;
 
-export type AccordionProps = NextUiAccordionProps;
+export interface AccordionProps extends NextUiAccordionProps {}
 export type AccordionItemIndicatorProps = NextUiAccordionItemIndicatorProps;
 export type AccordionItemProps = NextUiAccordionItemProps;
