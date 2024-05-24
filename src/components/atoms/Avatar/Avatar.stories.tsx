@@ -1,9 +1,9 @@
 import React from "react";
-import {Meta} from "@storybook/react";
-import {Activity, Camera} from "@nextui-org/shared-icons";
-import {avatar} from "@nextui-org/theme";
+import { Meta } from "@storybook/react";
+import { Activity, Camera } from "@nextui-org/shared-icons";
+import { avatar } from "@nextui-org/theme";
 
-import {Avatar} from "./Avatar";
+import { Avatar } from "./Avatar";
 
 export default {
   title: "Components/Avatar",
@@ -13,7 +13,14 @@ export default {
       control: {
         type: "select",
       },
-      options: ["default", "primary", "secondary", "success", "warning", "danger"],
+      options: [
+        "default",
+        "primary",
+        "secondary",
+        "success",
+        "warning",
+        "danger",
+      ],
     },
     radius: {
       control: {
@@ -152,7 +159,11 @@ export const CustomFallback = {
     src: "https://images.unsplash.com/broken",
     showFallback: true,
     fallback: (
-      <Camera className="animate-pulse w-6 h-6 text-default-500" fill="currentColor" size={20} />
+      <Camera
+        className="animate-pulse w-6 h-6 text-default-500"
+        fill="currentColor"
+        size={20}
+      />
     ),
   },
 };

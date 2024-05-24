@@ -1,7 +1,7 @@
 import React from "react";
-import {Meta} from "@storybook/react";
-import {button} from "@nextui-org/theme";
-import {Camera, HeadphonesIcon, Notification} from "@nextui-org/shared-icons";
+import { Meta } from "@storybook/react";
+import { button } from "@nextui-org/theme";
+import { Camera, HeadphonesIcon, Notification } from "@nextui-org/shared-icons";
 
 import { Button, ButtonProps } from "./Button";
 
@@ -13,13 +13,28 @@ export default {
       control: {
         type: "select",
       },
-      options: ["solid", "bordered", "light", "flat", "faded", "shadow", "ghost"],
+      options: [
+        "solid",
+        "bordered",
+        "light",
+        "flat",
+        "faded",
+        "shadow",
+        "ghost",
+      ],
     },
     color: {
       control: {
         type: "select",
       },
-      options: ["default", "primary", "secondary", "success", "warning", "danger"],
+      options: [
+        "default",
+        "primary",
+        "secondary",
+        "success",
+        "warning",
+        "danger",
+      ],
     },
     size: {
       control: {
@@ -78,7 +93,12 @@ const StateTemplate = (args: ButtonProps) => {
   };
 
   return (
-    <Button {...args} aria-label="Open" aria-pressed={isOpen} onPress={handlePress}>
+    <Button
+      {...args}
+      aria-label="Open"
+      aria-pressed={isOpen}
+      onPress={handlePress}
+    >
       {isOpen ? "Close" : "Open"}
     </Button>
   );
@@ -140,6 +160,7 @@ export const CustomWithClassNames = {
   args: {
     ...defaultProps,
     radius: "full",
-    className: "bg-gradient-to-tr from-pink-500 to-yellow-500 text-white shadow-lg",
+    className:
+      "bg-gradient-to-tr from-pink-500 to-yellow-500 text-white shadow-lg",
   },
 };

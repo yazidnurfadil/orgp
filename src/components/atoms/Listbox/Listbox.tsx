@@ -15,14 +15,14 @@ import type {
 } from "@nextui-org/listbox";
 
 // export type
-export type ListboxProps<T = object> = NextUiListboxProps<T>
-export type ListboxItemProps= NextUiListboxItemProps
-export interface ListboxSectionProps extends NextUiListboxSectionProps{}
+export type ListboxProps<T = object> = NextUiListboxProps<T>;
+export type ListboxItemProps = NextUiListboxItemProps;
+export interface ListboxSectionProps extends NextUiListboxSectionProps {}
 
 // export component
-export const Listbox = NextUiListbox
-export const ListboxItem = NextUiListboxItem
-export const ListboxSection = NextUiListboxSection
+export const Listbox = NextUiListbox;
+export const ListboxItem = NextUiListboxItem;
+export const ListboxSection = NextUiListboxSection;
 
 // export hook
-export const useListbox = nextUiUseListbox
+export const useListbox = nextUiUseListbox;

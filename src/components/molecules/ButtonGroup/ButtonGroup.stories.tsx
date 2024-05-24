@@ -1,6 +1,6 @@
 import React from "react";
-import {Meta} from "@storybook/react";
-import {button, buttonGroup} from "@nextui-org/theme";
+import { Meta } from "@storybook/react";
+import { button, buttonGroup } from "@nextui-org/theme";
 
 import { Button } from "@/components/atoms/Button";
 import { ButtonGroup, ButtonGroupProps } from "./ButtonGroup";
@@ -19,7 +19,14 @@ export default {
       control: {
         type: "select",
       },
-      options: ["default", "primary", "secondary", "success", "warning", "danger"],
+      options: [
+        "default",
+        "primary",
+        "secondary",
+        "success",
+        "warning",
+        "danger",
+      ],
     },
     radius: {
       control: {

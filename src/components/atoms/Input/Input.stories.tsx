@@ -1,10 +1,10 @@
 /* eslint-disable jsx-a11y/interactive-supports-focus */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import type {ValidationResult} from "@react-types/shared";
+import type { ValidationResult } from "@react-types/shared";
 
 import React, { FormEvent } from "react";
-import {Meta} from "@storybook/react";
-import {input} from "@nextui-org/theme";
+import { Meta } from "@storybook/react";
+import { input } from "@nextui-org/theme";
 import {
   MailFilledIcon,
   EyeFilledIcon,
@@ -12,10 +12,10 @@ import {
   SearchIcon,
   CloseFilledIcon,
 } from "@nextui-org/shared-icons";
-import {button} from "@nextui-org/theme";
-import {useForm} from "react-hook-form";
+import { button } from "@nextui-org/theme";
+import { useForm } from "react-hook-form";
 
-import {Input, InputProps, useInput} from "./Input";
+import { Input, InputProps, useInput } from "./Input";
 
 export default {
   title: "Components/Input",
@@ -31,7 +31,14 @@ export default {
       control: {
         type: "select",
       },
-      options: ["default", "primary", "secondary", "success", "warning", "danger"],
+      options: [
+        "default",
+        "primary",
+        "secondary",
+        "success",
+        "warning",
+        "danger",
+      ],
     },
     radius: {
       control: {
@@ -94,12 +101,14 @@ const FormTemplate = (args: InputProps) => (
   <form
     className="w-full max-w-xl flex flex-row items-end gap-4"
     onSubmit={(e: FormEvent<HTMLFormElement>) => {
-      alert(`Submitted value: ${(e.currentTarget.elements.namedItem('example') as HTMLInputElement).value}`);
+      alert(
+        `Submitted value: ${(e.currentTarget.elements.namedItem("example") as HTMLInputElement).value}`
+      );
       e.preventDefault();
     }}
   >
     <Input {...args} name="example" />
-    <button className={button({color: "primary"})} type="submit">
+    <button className={button({ color: "primary" })} type="submit">
       Submit
     </button>
   </form>
@@ -108,7 +117,8 @@ const FormTemplate = (args: InputProps) => (
 const PasswordTemplate = (args: InputProps) => {
   const [isPasswordVisible, setIsPasswordVisible] = React.useState(false);
 
-  const togglePasswordVisibility = () => setIsPasswordVisible(!isPasswordVisible);
+  const togglePasswordVisibility = () =>
+    setIsPasswordVisible(!isPasswordVisible);
 
   return (
     <div className="w-full max-w-[240px]">
@@ -137,7 +147,8 @@ const PasswordTemplate = (args: InputProps) => {
 const RegexValidationTemplate = (args: InputProps) => {
   const [value, setValue] = React.useState("");
 
-  const validateEmail = (value: string) => value.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/i);
+  const validateEmail = (value: string) =>
+    value.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/i);
 
   const validationState = React.useMemo(() => {
     if (value === "") return undefined;
@@ -149,7 +160,9 @@ const RegexValidationTemplate = (args: InputProps) => {
     <div className="w-full max-w-[240px]">
       <Input
         {...args}
-        errorMessage={validationState === "invalid" && "Please enter a valid email"}
+        errorMessage={
+          validationState === "invalid" && "Please enter a valid email"
+        }
         placeholder="Enter your email"
         validationState={validationState}
         value={value}
@@ -164,7 +177,12 @@ const ControlledTemplate = (args: InputProps) => {
 
   return (
     <div className="w-full flex flex-col gap-2 max-w-[240px]">
-      <Input {...args} placeholder="Enter your email" value={value} onValueChange={setValue} />
+      <Input
+        {...args}
+        placeholder="Enter your email"
+        value={value}
+        onValueChange={setValue}
+      />
       <p className="text-default-500 text-sm">Input value: {value}</p>
     </div>
   );
@@ -177,7 +195,11 @@ const LabelPlacementTemplate = (args: InputProps) => (
       <div className="w-full max-w-xl flex flex-row items-end gap-4">
         <Input {...args} description="inside" />
         <Input {...args} description="outside" labelPlacement="outside" />
-        <Input {...args} description="outside-left" labelPlacement="outside-left" />
+        <Input
+          {...args}
+          description="outside-left"
+          labelPlacement="outside-left"
+        />
       </div>
     </div>
     <div className="flex flex-col gap-3">
@@ -332,21 +354,51 @@ const StartAndEndContentTemplate = (args: InputProps) => (
 const InputTypesTemplate = (args: InputProps) => (
   <div className="grid grid-cols-3 gap-4">
     <Input {...args} label="Text" placeholder="Enter your text" />
-    <Input {...args} label="Number" placeholder="Enter your number" type="number" />
-    <Input {...args} label="Password" placeholder="Enter your password" type="password" />
-    <Input {...args} label="Email" placeholder="Enter your email" type="email" />
+    <Input
+      {...args}
+      label="Number"
+      placeholder="Enter your number"
+      type="number"
+    />
+    <Input
+      {...args}
+      label="Password"
+      placeholder="Enter your password"
+      type="password"
+    />
+    <Input
+      {...args}
+      label="Email"
+      placeholder="Enter your email"
+      type="email"
+    />
     <Input {...args} label="URL" placeholder="Enter your url" type="url" />
-    <Input {...args} label="Search" placeholder="Enter your search" type="search" />
+    <Input
+      {...args}
+      label="Search"
+      placeholder="Enter your search"
+      type="search"
+    />
     <Input {...args} label="Tel" placeholder="Enter your phone" type="tel" />
     <Input {...args} label="Date" placeholder="Enter your date" type="date" />
     <Input {...args} label="Time" placeholder="Enter your time" type="time" />
-    <Input {...args} label="Month" placeholder="Enter your month" type="month" />
+    <Input
+      {...args}
+      label="Month"
+      placeholder="Enter your month"
+      type="month"
+    />
     <Input {...args} label="Week" placeholder="Enter your week" type="week" />
-    <Input {...args} label="Range" placeholder="Enter your range" type="range" />
+    <Input
+      {...args}
+      label="Range"
+      placeholder="Enter your range"
+      type="range"
+    />
   </div>
 );
 
-const CustomWithClassNamesTemplate = (args:  InputProps) => (
+const CustomWithClassNamesTemplate = (args: InputProps) => (
   <div className="w-full max-w-[340px]">
     <Input
       {...args}
@@ -440,7 +492,11 @@ const CustomWithHooksTemplate = (args: InputProps) => {
 
   const end = React.useMemo(() => {
     if (isClearable) {
-      return <span {...getClearButtonProps()}>{endContent || <CloseFilledIcon />}</span>;
+      return (
+        <span {...getClearButtonProps()}>
+          {endContent || <CloseFilledIcon />}
+        </span>
+      );
     }
 
     return endContent;
@@ -484,7 +540,7 @@ const CustomWithHooksTemplate = (args: InputProps) => {
 const WithReactHookFormTemplate = (args: InputProps) => {
   const {
     register,
-    formState: {errors},
+    formState: { errors },
     handleSubmit,
   } = useForm({
     defaultValues: {
@@ -502,11 +558,25 @@ const WithReactHookFormTemplate = (args: InputProps) => {
 
   return (
     <form className="flex flex-col gap-4" onSubmit={handleSubmit(onSubmit)}>
-      <Input isClearable label="With default value" {...register("withDefaultValue")} />
-      <Input {...args} label="Without default value" {...register("withoutDefaultValue")} />
-      <Input {...args} label="Required" {...register("requiredField", {required: true})} />
-      {errors.requiredField && <span className="text-danger">This field is required</span>}
-      <button className={button({class: "w-fit"})} type="submit">
+      <Input
+        isClearable
+        label="With default value"
+        {...register("withDefaultValue")}
+      />
+      <Input
+        {...args}
+        label="Without default value"
+        {...register("withoutDefaultValue")}
+      />
+      <Input
+        {...args}
+        label="Required"
+        {...register("requiredField", { required: true })}
+      />
+      {errors.requiredField && (
+        <span className="text-danger">This field is required</span>
+      )}
+      <button className={button({ class: "w-fit" })} type="submit">
         Submit
       </button>
     </form>

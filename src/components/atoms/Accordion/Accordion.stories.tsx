@@ -1,8 +1,8 @@
-import type {Selection} from "@react-types/shared";
+import type { Selection } from "@react-types/shared";
 
 import React from "react";
-import {Meta} from "@storybook/react";
-import {accordionItem, button} from "@nextui-org/theme";
+import { Meta } from "@storybook/react";
+import { accordionItem, button } from "@nextui-org/theme";
 import {
   AnchorIcon,
   MoonIcon,
@@ -12,11 +12,16 @@ import {
   MonitorMobileIcon,
   InvalidCardIcon,
 } from "@nextui-org/shared-icons";
-import {Avatar} from "@nextui-org/avatar";
-import {Input} from "@nextui-org/input";
-import {Button} from "@nextui-org/button";
+import { Avatar } from "@nextui-org/avatar";
+import { Input } from "@nextui-org/input";
+import { Button } from "@nextui-org/button";
 
-import {Accordion, AccordionProps, AccordionItem, AccordionItemProps} from "./Accordion";
+import {
+  Accordion,
+  AccordionProps,
+  AccordionItem,
+  AccordionItemProps,
+} from "./Accordion";
 
 export default {
   title: "Components/Accordion",
@@ -71,7 +76,12 @@ const Template = (args: AccordionProps) => (
 
 const TemplateWithSubtitle = (args: AccordionProps) => (
   <Accordion {...args}>
-    <AccordionItem key="1" aria-label="Accordion 1" subtitle="Press to expand" title="Accordion 1">
+    <AccordionItem
+      key="1"
+      aria-label="Accordion 1"
+      subtitle="Press to expand"
+      title="Accordion 1"
+    >
       {defaultContent}
     </AccordionItem>
     <AccordionItem
@@ -86,7 +96,12 @@ const TemplateWithSubtitle = (args: AccordionProps) => (
     >
       {defaultContent}
     </AccordionItem>
-    <AccordionItem key="3" aria-label="Accordion 3" subtitle="Press to expand" title="Accordion 3">
+    <AccordionItem
+      key="3"
+      aria-label="Accordion 3"
+      subtitle="Press to expand"
+      title="Accordion 3"
+    >
       {defaultContent}
     </AccordionItem>
   </Accordion>
@@ -212,20 +227,37 @@ const VariantsTemplate = (args: AccordionProps) => (
 
 const CustomInidicatorTemplate = (args: AccordionProps) => (
   <Accordion {...args}>
-    <AccordionItem key="anchor" aria-label="Anchor" indicator={<AnchorIcon />} title="Anchor">
+    <AccordionItem
+      key="anchor"
+      aria-label="Anchor"
+      indicator={<AnchorIcon />}
+      title="Anchor"
+    >
       {defaultContent}
     </AccordionItem>
-    <AccordionItem key="moon" aria-label="Moon" indicator={<MoonIcon />} title="Moon">
+    <AccordionItem
+      key="moon"
+      aria-label="Moon"
+      indicator={<MoonIcon />}
+      title="Moon"
+    >
       {defaultContent}
     </AccordionItem>
-    <AccordionItem key="sun" aria-label="Sun" indicator={<SunIcon />} title="Sun">
+    <AccordionItem
+      key="sun"
+      aria-label="Sun"
+      indicator={<SunIcon />}
+      title="Sun"
+    >
       {defaultContent}
     </AccordionItem>
   </Accordion>
 );
 
 const ControlledTemplate = (args: AccordionProps) => {
-  const [selectedKeys, setSelectedKeys] = React.useState<Selection>(new Set(["1"]));
+  const [selectedKeys, setSelectedKeys] = React.useState<Selection>(
+    new Set(["1"])
+  );
 
   // eslint-disable-next-line no-console
   console.log(selectedKeys);
@@ -275,7 +307,8 @@ const CustomWithClassNamesTemplate = (args: AccordionProps) => {
   const itemClasses: AccordionItemProps["classNames"] = {
     base: "py-0 w-full",
     title: "font-normal text-base",
-    trigger: "px-2 py-0 data-[hover=true]:bg-default-100 rounded-lg h-14 flex items-center",
+    trigger:
+      "px-2 py-0 data-[hover=true]:bg-default-100 rounded-lg h-14 flex items-center",
     indicator: "text-base",
     content: "text-sm px-2",
   };
@@ -314,7 +347,7 @@ const CustomWithClassNamesTemplate = (args: AccordionProps) => {
       <AccordionItem
         key="3"
         aria-label="Pending tasks"
-        classNames={{...itemClasses, subtitle: "text-warning"}}
+        classNames={{ ...itemClasses, subtitle: "text-warning" }}
         startContent={<InfoIcon className="text-warning" />}
         subtitle="Complete your profile"
         title="Pending tasks"
@@ -324,7 +357,7 @@ const CustomWithClassNamesTemplate = (args: AccordionProps) => {
       <AccordionItem
         key="4"
         aria-label="Card expired"
-        classNames={{...itemClasses, subtitle: "text-danger"}}
+        classNames={{ ...itemClasses, subtitle: "text-danger" }}
         startContent={<InvalidCardIcon className="text-danger" />}
         subtitle="Please, update now"
         title={
@@ -353,10 +386,15 @@ const WithFormTemplate = (args: AccordionProps) => {
           console.log(value)
         }
       />
-      <Input isRequired label="Password" placeholder="Enter your password" type="password" />
+      <Input
+        isRequired
+        label="Password"
+        placeholder="Enter your password"
+        type="password"
+      />
 
       <div className="flex gap-2 justify-end">
-        <button className={button({color: "primary"})}>Login</button>
+        <button className={button({ color: "primary" })}>Login</button>
       </div>
     </form>
   );
