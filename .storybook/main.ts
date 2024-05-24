@@ -1,27 +1,27 @@
-import type { StorybookConfig } from '@storybook/nextjs';
+import type { StorybookConfig } from "@storybook/nextjs";
 
 const config: StorybookConfig = {
-  stories: ['../src/components/**/*.@(mdx|stories.@(js|jsx|ts|tsx))'],
+  stories: ["../src/components/**/*.@(mdx|stories.@(js|jsx|ts|tsx))"],
 
   addons: [
-    '@storybook/addon-onboarding',
-    '@storybook/addon-links',
-    '@storybook/addon-essentials',
-    '@storybook/addon-interactions',
+    "@storybook/addon-onboarding",
+    "@storybook/addon-links",
+    "@storybook/addon-essentials",
+    "@storybook/addon-interactions",
     "@storybook/addon-themes",
-    '@chromatic-com/storybook'
+    "@chromatic-com/storybook",
   ],
 
   framework: {
-    name: '@storybook/nextjs',
+    name: "@storybook/nextjs",
     options: {},
   },
 
   docs: {
-    autodocs: 'tag',
+    autodocs: "tag",
   },
 
-  staticDirs: ['../src/public'],
+  staticDirs: ["../src/public"],
 
   webpackFinal: async (config) => {
     const fileLoaderRule = config.module?.rules?.find((rule) => {
@@ -31,7 +31,7 @@ const config: StorybookConfig = {
         return false;
       }
 
-      return test.test('.svg');
+      return test.test(".svg");
     }) as { [key: string]: any };
 
     config.module?.rules?.push(
@@ -46,7 +46,7 @@ const config: StorybookConfig = {
         resourceQuery: {
           not: [...(fileLoaderRule.resourceQuery?.not || []), /url/],
         }, // exclude if *.svg?url
-        use: ['@svgr/webpack'],
+        use: ["@svgr/webpack"],
       }
     );
 
