@@ -8,8 +8,6 @@ import {
   // context
   CalendarProvider as NextUiCalendarProvider,
   useCalendarContext as nextUiUseCalendarContext,
-  // class
-  CalendarDate as NextUiCalendarDate,
 } from "@nextui-org/calendar";
 
 // type
@@ -35,6 +33,5 @@ export const useCalendar = nextUiUseCalendar;
 export const useRangeCalendar = nextUiUseRangeCalendar;
 
 // export component
-export const CalendarDate = NextUiCalendarDate;
 export const Calendar = NextUiCalendar;
 export const RangeCalendar = NextUiRangeCalendar;
