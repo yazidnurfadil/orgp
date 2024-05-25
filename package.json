@@ -22,6 +22,7 @@
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.4.0",
+    "@emotion/is-prop-valid": "^1.2.2",
     "@nextui-org/stories-utils": "^2.0.2",
     "@storybook/addon-essentials": "^8.1.3",
     "@storybook/addon-interactions": "^8.1.3",
