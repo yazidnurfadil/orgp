@@ -20,6 +20,7 @@ import type {
 // export type
 export interface DropdownProps extends NextUiDropdownProps {}
 export interface DropdownTriggerProps extends NextUiDropdownTriggerProps {}
+export type DropdownMenuProps<T = object> = NextUiDropdownMenuProps<T>;
 export type DropdownItemProps<T extends object> = MenuItemProps<T>;
 export type DropdownSectionProps<T extends object> = NextUiDropdownMenuProps<T>;
 
