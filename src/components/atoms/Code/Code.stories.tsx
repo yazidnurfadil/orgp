@@ -4,7 +4,7 @@ import { code } from "@nextui-org/theme";
 import { Code } from "./Code";
 
 export default {
-  title: "Components/Code",
+  title: "Atoms/Code",
   component: Code,
   argTypes: {
     color: {

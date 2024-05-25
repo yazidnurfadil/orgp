@@ -5,7 +5,7 @@ import { divider } from "@nextui-org/theme";
 import { Divider, DividerProps } from "./Divider";
 
 export default {
-  title: "Components/Divider",
+  title: "Atoms/Divider",
   component: Divider,
   argTypes: {
     orientation: {

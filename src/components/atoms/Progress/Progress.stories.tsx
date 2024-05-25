@@ -5,7 +5,7 @@ import { progress } from "@nextui-org/theme";
 import { Progress, ProgressProps } from "./Progress";
 
 export default {
-  title: "Components/Progress",
+  title: "Atoms/Progress",
   component: Progress,
   argTypes: {
     color: {

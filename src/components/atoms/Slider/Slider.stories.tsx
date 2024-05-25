@@ -13,7 +13,7 @@ import { clsx } from "@nextui-org/shared-utils";
 import { Slider, SliderProps, SliderValue } from "./Slider";
 
 export default {
-  title: "Components/Slider",
+  title: "Atoms/Slider",
   component: Slider,
   argTypes: {
     label: {

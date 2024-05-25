@@ -9,7 +9,7 @@ import { button } from "@nextui-org/theme";
 import { Textarea, TextAreaProps } from "./Textarea";
 
 export default {
-  title: "Components/Textarea",
+  title: "Atoms/Textarea",
   component: Textarea,
   argTypes: {
     variant: {

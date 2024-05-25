@@ -5,7 +5,7 @@ import { Link } from "@nextui-org/link";
 import { User } from "./User";
 
 export default {
-  title: "Components/User",
+  title: "Atoms/User",
   component: User,
 } as Meta<typeof User>;
 

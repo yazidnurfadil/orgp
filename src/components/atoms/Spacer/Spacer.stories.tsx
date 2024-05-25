@@ -5,7 +5,7 @@ import { spacer } from "@nextui-org/theme";
 import { Spacer, SpacerProps } from "./Spacer";
 
 export default {
-  title: "Components/Spacer",
+  title: "Atoms/Spacer",
   component: Spacer,
   argTypes: {
     x: {

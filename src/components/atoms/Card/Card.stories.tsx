@@ -9,7 +9,7 @@ import { Image } from "@nextui-org/image";
 import { Card, CardBody, CardHeader, CardFooter, CardProps } from "./Card";
 
 export default {
-  title: "Components/Card",
+  title: "Atoms/Card",
   component: Card,
   argTypes: {
     shadow: {

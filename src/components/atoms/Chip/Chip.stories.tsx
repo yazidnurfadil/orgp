@@ -7,7 +7,7 @@ import { CheckIcon } from "@nextui-org/shared-icons";
 import { Chip, ChipProps } from "./Chip";
 
 export default {
-  title: "Components/Chip",
+  title: "Atoms/Chip",
   component: Chip,
   argTypes: {
     variant: {

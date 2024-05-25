@@ -22,7 +22,7 @@ import { RangeCalendar, RangeCalendarProps } from "./Calendar";
 import { RadioProps } from "@nextui-org/react";
 
 export default {
-  title: "Components/RangeCalendar",
+  title: "Atoms/RangeCalendar",
   component: RangeCalendar,
   parameters: {
     layout: "centered",

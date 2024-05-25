@@ -17,7 +17,7 @@ import { useDateFormatter, I18nProvider } from "@react-aria/i18n";
 import { DateInput, DateInputProps } from "./DateInput";
 
 export default {
-  title: "Components/DateInput",
+  title: "Molecules/DateInput",
   component: DateInput,
   argTypes: {
     variant: {

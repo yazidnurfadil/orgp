@@ -8,7 +8,7 @@ import { link } from "@nextui-org/theme";
 import { Link, LinkProps } from "./Link";
 
 export default {
-  title: "Components/Link",
+  title: "Atoms/Link",
   component: Link,
   argTypes: {
     color: {

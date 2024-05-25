@@ -29,7 +29,7 @@ import {
 } from "./Select";
 
 export default {
-  title: "Components/Select",
+  title: "Molecules/Select",
   component: Select,
   argTypes: {
     variant: {

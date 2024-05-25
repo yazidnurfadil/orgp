@@ -22,7 +22,7 @@ import { DatePicker, DatePickerProps } from "./DatePicker";
 import { RadioProps } from "@/components/molecules/RadioGroup";
 
 export default {
-  title: "Components/DatePicker",
+  title: "Molecules/DatePicker",
   component: DatePicker,
   argTypes: {
     variant: {

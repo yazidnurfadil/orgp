@@ -14,7 +14,7 @@ import {
 } from "./Popover";
 
 export default {
-  title: "Components/Popover",
+  title: "Atoms/Popover",
   component: Popover,
   argTypes: {
     variant: {

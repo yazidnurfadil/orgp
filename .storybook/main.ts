@@ -21,7 +21,7 @@ const config: StorybookConfig = {
     autodocs: "tag",
   },
 
-  staticDirs: ["../src/public"],
+  staticDirs: ["../public"],
 
   webpackFinal: async (config) => {
     const fileLoaderRule = config.module?.rules?.find((rule) => {

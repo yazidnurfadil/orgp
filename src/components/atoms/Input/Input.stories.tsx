@@ -18,7 +18,7 @@ import { useForm } from "react-hook-form";
 import { Input, InputProps, useInput } from "./Input";
 
 export default {
-  title: "Components/Input",
+  title: "Atoms/Input",
   component: Input,
   argTypes: {
     variant: {

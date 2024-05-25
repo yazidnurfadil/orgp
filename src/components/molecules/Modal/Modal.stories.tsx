@@ -18,7 +18,7 @@ import {
 } from "./Modal";
 
 export default {
-  title: "Components/Modal",
+  title: "Molecules/Modal",
   component: Modal,
   argTypes: {
     size: {

@@ -18,7 +18,7 @@ import { Calendar, CalendarProps, DateValue } from "./Calendar";
 import { RadioProps } from "@nextui-org/react";
 
 export default {
-  title: "Components/Calendar",
+  title: "Atoms/Calendar",
   component: Calendar,
   parameters: {
     layout: "centered",

@@ -24,7 +24,7 @@ import {
 } from "./Accordion";
 
 export default {
-  title: "Components/Accordion",
+  title: "Atoms/Accordion",
   component: Accordion,
   argTypes: {
     variant: {

@@ -12,7 +12,7 @@ import type { SwitchThumbIconProps } from "@nextui-org/switch";
 import { Switch, SwitchProps, useSwitch } from "./Switch";
 
 export default {
-  title: "Components/Switch",
+  title: "Atoms/Switch",
   component: Switch,
   argTypes: {
     color: {

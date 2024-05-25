@@ -16,7 +16,7 @@ import {
 } from "./RadioGroup";
 
 export default {
-  title: "Components/RadioGroup",
+  title: "Molecules/RadioGroup",
   component: RadioGroup,
   onChange: { action: "changed" },
   argTypes: {

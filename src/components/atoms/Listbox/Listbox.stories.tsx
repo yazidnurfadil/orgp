@@ -166,7 +166,7 @@ const BookIcon = (props: SVGProps<SVGSVGElement>) => (
 );
 
 export default {
-  title: "Components/Listbox",
+  title: "Atoms/Listbox",
   component: Listbox,
   argTypes: {
     variant: {

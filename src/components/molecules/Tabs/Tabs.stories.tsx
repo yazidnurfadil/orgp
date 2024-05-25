@@ -16,7 +16,7 @@ import {
 import { Tabs, Tab, TabsProps } from "./Tabs";
 
 export default {
-  title: "Components/Tabs",
+  title: "Molecules/Tabs",
   component: Tabs,
   argTypes: {
     variant: {

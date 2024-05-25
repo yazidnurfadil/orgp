@@ -24,7 +24,7 @@ import {
 } from "./Table";
 
 export default {
-  title: "Components/Table",
+  title: "Molecules/Table",
   component: Table,
   argTypes: {
     color: {

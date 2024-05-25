@@ -6,7 +6,7 @@ import { Camera, HeadphonesIcon, Notification } from "@nextui-org/shared-icons";
 import { Button, ButtonProps } from "./Button";
 
 export default {
-  title: "Components/Button",
+  title: "Atoms/Button",
   component: Button,
   argTypes: {
     variant: {

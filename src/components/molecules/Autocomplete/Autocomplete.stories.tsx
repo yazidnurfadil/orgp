@@ -30,7 +30,7 @@ import {
 } from "./Autocomplete";
 
 export default {
-  title: "Components/Autocomplete",
+  title: "Molecules/Autocomplete",
   component: Autocomplete,
   argTypes: {
     variant: {

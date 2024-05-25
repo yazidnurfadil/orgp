@@ -34,7 +34,7 @@ import {
 } from "./Navbar";
 
 export default {
-  title: "Components/Navbar",
+  title: "Molecules/Navbar",
   component: Navbar,
   argTypes: {
     position: {

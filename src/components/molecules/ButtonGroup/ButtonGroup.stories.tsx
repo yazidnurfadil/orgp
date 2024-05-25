@@ -6,7 +6,7 @@ import { Button } from "@/components/atoms/Button";
 import { ButtonGroup, ButtonGroupProps } from "./ButtonGroup";
 
 export default {
-  title: "Components/ButtonGroup",
+  title: "Molecules/ButtonGroup",
   component: ButtonGroup,
   argTypes: {
     variant: {

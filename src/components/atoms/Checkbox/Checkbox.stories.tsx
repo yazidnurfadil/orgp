@@ -8,7 +8,7 @@ import { useForm } from "react-hook-form";
 import { Checkbox, CheckboxIconProps, CheckboxProps } from "./Checkbox";
 
 export default {
-  title: "Components/Checkbox",
+  title: "Atoms/Checkbox",
   component: Checkbox,
   argTypes: {
     color: {

@@ -23,7 +23,7 @@ import { clsx } from "@nextui-org/shared-utils";
 import { Breadcrumbs, BreadcrumbItem, BreadcrumbsProps } from "./Breadcrumbs";
 
 export default {
-  title: "Components/Breadcrumbs",
+  title: "Atoms/Breadcrumbs",
   component: Breadcrumbs,
   argTypes: {
     page: {

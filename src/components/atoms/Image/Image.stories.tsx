@@ -5,7 +5,7 @@ import { image } from "@nextui-org/theme";
 import { Image, ImageProps } from "./Image";
 
 export default {
-  title: "Components/Image",
+  title: "Atoms/Image",
   component: Image,
   argTypes: {
     radius: {

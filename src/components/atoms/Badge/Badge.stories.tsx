@@ -9,7 +9,7 @@ import { Notification, CartIcon } from "@nextui-org/shared-icons";
 import { Badge, BadgeProps } from "./Badge";
 
 export default {
-  title: "Components/Badge",
+  title: "Atoms/Badge",
   component: Badge,
   argTypes: {
     content: {

@@ -5,7 +5,7 @@ import { snippet } from "@nextui-org/theme";
 import { Snippet } from "./Snippet";
 
 export default {
-  title: "Components/Snippet",
+  title: "Atoms/Snippet",
   component: Snippet,
   argTypes: {
     variant: {

@@ -7,7 +7,7 @@ import { Button } from "@nextui-org/button";
 import { Skeleton, SkeletonProps } from "./Skeleton";
 
 export default {
-  title: "Components/Skeleton",
+  title: "Atoms/Skeleton",
   component: Skeleton,
   argTypes: {
     children: {

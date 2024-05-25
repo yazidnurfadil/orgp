@@ -23,7 +23,7 @@ import {
 } from "./Dropdown";
 
 export default {
-  title: "Components/Dropdown",
+  title: "Molecules/Dropdown",
   component: Dropdown,
   argTypes: {
     variant: {

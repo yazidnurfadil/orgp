@@ -12,7 +12,7 @@ import {
 } from "./Pagination";
 
 export default {
-  title: "Components/Pagination",
+  title: "Atoms/Pagination",
   component: Pagination,
   argTypes: {
     page: {
